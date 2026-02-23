@@ -1,0 +1,9 @@
+a {
+  color: inherit;
+  /* pico */
+  text-decoration-color: unset;
+}
+
+body.container {
+  width: fit-content;
+}

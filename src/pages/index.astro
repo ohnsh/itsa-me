@@ -1,17 +1,84 @@
 ---
-
+import BaseLayout from '../layouts/Base.astro'
+import { Github, Pin, AtSign, Instagram, Youtube, Linkedin } from '@lucide/astro'
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+	<header>
+		<img src="/me.jpg">
+		<h1>John Sherrell</h1>
+	</header>
+	<main>
+  	<ul>
+			<li><Github /><a href="https://github.com/ohnsh">@ohnsh</a></li>
+			<li><AtSign /><a href="mailto:j@ohn.sh">j@ohn.sh</a></li>
+			<li><Instagram /><a href="https://instagram.com/j.ohn.sh">@j.ohn.sh</a></li>
+			<li><Youtube /><a href="https://youtube.com/@ohn-sh">@ohn-sh</a></li>
+			<li><Linkedin /><a href="https://linkedin.com/in/ohnsh">@ohn-sh</a></li>
+			<!--<li><Facebook /><a href="https://facebook.com/ohn.sh0">@ohn.sh0</a></li>-->
+		</ul>
+	</main>
+	<footer>
+		<p><Pin /> Kansas City, Missouri</p>
+	</footer>
+</BaseLayout>
+
+<style>
+	:root {
+		--grad: linear-gradient(to top right, cyan, dodgerblue);
+	}
+	header, footer {
+		text-align: center;
+	}
+	main {
+		/* un-pico */
+		padding-block: 0;
+	}
+	img {
+		width: 200px;
+		background: var(--grad);
+		border: solid 1.5px transparent;
+		border-radius: 50%;
+	}
+	ul {
+		width: fit-content;
+		margin-inline: auto;
+		border: solid 1.5px #444;
+		border-radius: 1em;
+		padding: 1em 2em;
+		background: var(--pico-background-color);
+	}
+	/* ul:hover {
+		background-image: var(--grad);
+		background-clip: text;
+		-webkit-background-clip: text;
+		border: solid 1.5px transparent;
+		color: transparent;
+	} */
+	ul, li {
+		list-style: none;
+	}
+	ul li {
+		display: flex;
+		align-items: center;
+	}
+	ul a {
+		display: block;
+		padding: .5em 1em;
+		text-decoration: none;
+	}
+	:global(svg.lucide) {
+	  width: 1.1em;
+	  height: 1.1em;
+	  /* stroke: currentColor;
+	  stroke-linecap: round;
+	  stroke-linejoin: round; */
+	}
+	ul :global(svg.lucide) {
+		font-size: 1.75em;
+		stroke-width: 1.5px;
+	}
+	footer {
+		font-size: small;
+	}
+</style>
