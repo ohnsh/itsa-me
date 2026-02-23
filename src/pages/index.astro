@@ -1,9 +1,12 @@
 ---
 import BaseLayout from '../layouts/Base.astro'
-import { Github, Pin, AtSign, Instagram, Youtube, Linkedin } from '@lucide/astro'
+import { Pin, AtSign, Linkedin } from '@lucide/astro'
+import Github from '../assets/github.svg'
+import Youtube from '../assets/youtube.svg'
+import Instagram from '../assets/instagram.svg'
 ---
 
-<BaseLayout>
+<BaseLayout title="John Sherrell">
 	<header>
 		<img src="/me.jpg">
 		<h1>John Sherrell</h1>
@@ -67,16 +70,16 @@ import { Github, Pin, AtSign, Instagram, Youtube, Linkedin } from '@lucide/astro
 		padding: .5em 1em;
 		text-decoration: none;
 	}
-	:global(svg.lucide) {
+	:global(svg) {
 	  width: 1.1em;
 	  height: 1.1em;
 	  /* stroke: currentColor;
 	  stroke-linecap: round;
-	  stroke-linejoin: round; */
+	  stroke-linejoin: round;
+		stroke-width */
 	}
-	ul :global(svg.lucide) {
+	ul :global(svg) {
 		font-size: 1.75em;
-		stroke-width: 1.5px;
 	}
 	footer {
 		font-size: small;
