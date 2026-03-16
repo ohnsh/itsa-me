@@ -2,11 +2,7 @@
 import BaseLayout from '../layouts/Base.astro'
 import { SquareActivity, FlaskConical } from '@lucide/astro'
 import MapPin from '../assets/icons/si-map-pin.svg'
-import Github from '../assets/icons/pro-github.svg'
-import Insta from '../assets/icons/sl-instagram.svg'
-import Linkedin from '../assets/icons/sl-linkedin.svg'
-import Email from '../assets/icons/sl-send-email.svg'
-import Youtube from '../assets/icons/sl-youtube.svg'
+import LinkItem from '../components/LinkItem.astro'
 ---
 
 <BaseLayout title="John Sherrell">
@@ -27,21 +23,11 @@ import Youtube from '../assets/icons/sl-youtube.svg'
       </li>
     </ul>
     <ul class="socials">
-      <li><a href="https://github.com/ohnsh"><Github stroke-width="1" /><span>@ohnsh</span></a></li>
-      <li><a href="mailto:j@ohn.sh"><Email stroke-width=".6" /><span>j@ohn.sh</span></a></li>
-      <li>
-        <a href="https://instagram.com/j.ohn.sh"><Insta stroke-width="1" /><span>@j.ohn.sh</span></a
-        >
-      </li>
-      <li>
-        <a href="https://youtube.com/@ohn-sh"><Youtube stroke-width="1" /><span>@ohn-sh</span></a>
-      </li>
-      <li>
-        <a href="https://linkedin.com/in/ohnsh"
-          ><Linkedin stroke-width=".6" /><span>@ohn-sh</span></a
-        >
-      </li>
-      <!--https://facebook.com/ohn.sh0-->
+      <LinkItem platform="github" handle="ohnsh" />
+      <LinkItem platform="email" handle="j@ohn.sh" />
+      <LinkItem platform="instagram" handle="j.ohn.sh" />
+      <LinkItem platform="youtube" handle="ohn-sh" />
+      <LinkItem platform="linkedin" handle="ohnsh" />
     </ul>
   </main>
   <footer>
@@ -80,15 +66,7 @@ import Youtube from '../assets/icons/sl-youtube.svg'
 		border: solid 1.5px transparent;
 		color: transparent;
 	} */
-  ul a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
-    padding: 0.5em 1em;
-    color: inherit;
-    text-decoration: none;
-  }
+
   ul.projects a > span {
     min-width: 11ch;
   }
