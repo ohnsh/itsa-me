@@ -20,9 +20,12 @@ const { Icon, link, display, strokeFactor = 1 } = platforms[platform]
     gap: 1em;
     padding: 0.5em 1em;
     color: inherit;
-    text-decoration: none;
     gap: 2em;
-
+    text-underline-offset: .1rem;
+    
+    &:not(:hover) {
+      text-decoration: none;
+    }
     > span {
       min-width: calc(11ch - 1em);
     }

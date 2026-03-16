@@ -11,16 +11,20 @@ import ProjectLinks from '../components/ProjectLinks.astro'
     <h1>John Sherrell</h1>
   </header>
   <main>
-    <ul class="projects">
-      <ProjectLinks />
-    </ul>
-    <ul class="socials">
-      <SocialLink platform="github" handle="ohnsh" />
-      <SocialLink platform="email" handle="j@ohn.sh" />
-      <SocialLink platform="instagram" handle="j.ohn.sh" />
-      <SocialLink platform="youtube" handle="ohn-sh" />
-      <SocialLink platform="linkedin" handle="ohnsh" />
-    </ul>
+    <nav>
+      <ul class="projects">
+        <ProjectLinks />
+      </ul>
+    </nav>
+    <nav>
+      <ul class="socials">
+        <SocialLink platform="github" handle="ohnsh" />
+        <SocialLink platform="email" handle="j@ohn.sh" />
+        <SocialLink platform="instagram" handle="j.ohn.sh" />
+        <SocialLink platform="youtube" handle="ohn-sh" />
+        <SocialLink platform="linkedin" handle="ohnsh" />
+      </ul>
+    </nav>
   </main>
   <footer>
     <p><MapPin /> Kansas City, Missouri</p>
@@ -42,22 +46,25 @@ import ProjectLinks from '../components/ProjectLinks.astro'
     border-radius: 50%;
   }
   ul {
-		list-style: none;
+    list-style: none;
+    padding: 0.5em;
+    background-color: var(--bg);
+    border-radius: calc(1em - 1.5px);
+    margin: 0;
+  }
+  nav {
     width: fit-content;
     min-width: 230px;
+    font-size: 1.1rem;
     margin: 1rem auto;
     border: solid 1.5px #444;
     border-radius: 1em;
-    padding: 0.5em;
-    font-size: 1.1rem;
+    background-image: var(--grad);
+    &:hover {
+      border-color: transparent;
+      /* -webkit-background-clip: text; */
+    }
   }
-  /* ul:hover {
-		background-image: var(--grad);
-		background-clip: text;
-		-webkit-background-clip: text;
-		border: solid 1.5px transparent;
-		color: transparent;
-	} */
 
   ul :global(svg) {
     font-size: 1.75em;
