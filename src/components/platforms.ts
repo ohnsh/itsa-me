@@ -7,6 +7,7 @@ import Youtube from '../assets/icons/sl-youtube.svg'
 
 interface Platform {
   Icon: SvgComponent,
+  strokeFactor?: number,
   link: (handle: string) => string,
   display: (handle: string) => string,
 }
@@ -19,6 +20,7 @@ export default {
   },
   email: {
     Icon: Email,
+    strokeFactor: 0.6,
     link: (handle) => `mailto:${handle}`,
     display: (handle) => `${handle}`,
   },
@@ -34,9 +36,10 @@ export default {
   },
   linkedin: {
     Icon: Linkedin,
+    strokeFactor: 0.6,
     link: (handle) => `https://linkedin.com/in/${handle}`,
     display: (handle) => `${handle}`,
   },
-} satisfies Record<string, Platform>
+} as Record<string, Platform>
 // satisfies allows the more specific Record<keys, Platform> to be inferred.
 // https://facebook.com/ohn.sh0

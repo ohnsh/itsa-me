@@ -7,10 +7,10 @@ interface Props {
 }
 
 const { platform, handle } = Astro.props
-const { Icon, link, display } = platforms[platform]
+const { Icon, link, display, strokeFactor = 1 } = platforms[platform]
 ---
 
-<li><a href={link(handle)}><Icon stroke-width="1" /><span>{display(handle)}</span></a></li>
+<li><a href={link(handle)}><Icon stroke-width={strokeFactor} /><span>{display(handle)}</span></a></li>
 
 <style>
   a {
