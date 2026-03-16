@@ -4,7 +4,7 @@
   --link: var(--indigo-3);
   --link-visited: var(--purple-3);
 
-  --bg: hsl(45deg  6%  9%);
+  --bg: hsl(70deg  6%  9%);
   --fg: hsl(none none 85%);
   --grad: linear-gradient(to top right, cyan, dodgerblue);
 
