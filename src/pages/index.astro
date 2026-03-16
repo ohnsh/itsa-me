@@ -3,11 +3,12 @@ import BaseLayout from '../layouts/Base.astro'
 import MapPin from '../assets/icons/si-map-pin.svg'
 import SocialLink from '../components/SocialLink.astro'
 import ProjectLinks from '../components/ProjectLinks.astro'
+import mainPic from '../assets/headshot_1280.jpg'
 ---
 
 <BaseLayout title="John Sherrell">
   <header>
-    <img src="/me.jpg" />
+    <img src={mainPic.src} alt="Photo of John" />
     <h1>John Sherrell</h1>
   </header>
   <main>
