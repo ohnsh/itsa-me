@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../layouts/Base.astro'
-import { SquareActivity, FlaskConical } from '@lucide/astro'
 import MapPin from '../assets/icons/si-map-pin.svg'
-import LinkItem from '../components/LinkItem.astro'
+import SocialLink from '../components/SocialLink.astro'
+import ProjectLinks from '../components/ProjectLinks.astro'
 ---
 
 <BaseLayout title="John Sherrell">
@@ -12,22 +12,14 @@ import LinkItem from '../components/LinkItem.astro'
   </header>
   <main>
     <ul class="projects">
-      <li>
-        <a href="https://days.ohn.sh"><SquareActivity stroke-width="1" /><span>days.ohn.sh</span></a
-        >
-      </li>
-      <li>
-        <a href="https://scratch.ohn.sh"
-          ><FlaskConical stroke-width="1" /><span>scratch.ohn.sh</span></a
-        >
-      </li>
+      <ProjectLinks />
     </ul>
     <ul class="socials">
-      <LinkItem platform="github" handle="ohnsh" />
-      <LinkItem platform="email" handle="j@ohn.sh" />
-      <LinkItem platform="instagram" handle="j.ohn.sh" />
-      <LinkItem platform="youtube" handle="ohn-sh" />
-      <LinkItem platform="linkedin" handle="ohnsh" />
+      <SocialLink platform="github" handle="ohnsh" />
+      <SocialLink platform="email" handle="j@ohn.sh" />
+      <SocialLink platform="instagram" handle="j.ohn.sh" />
+      <SocialLink platform="youtube" handle="ohn-sh" />
+      <SocialLink platform="linkedin" handle="ohnsh" />
     </ul>
   </main>
   <footer>
@@ -67,16 +59,6 @@ import LinkItem from '../components/LinkItem.astro'
 		color: transparent;
 	} */
 
-  ul.projects a > span {
-    min-width: 11ch;
-  }
-  ul.socials a {
-    gap: 2em;
-    > span {
-      min-width: calc(11ch - 1em);
-      /* text-align: center; */
-    }
-  }
   ul :global(svg) {
     font-size: 1.75em;
     width: 1.1em;
