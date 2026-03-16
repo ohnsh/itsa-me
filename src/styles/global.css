@@ -1,9 +1,38 @@
-a {
-  color: inherit;
-  /* pico */
-  text-decoration-color: unset;
+:root {
+  color-scheme: dark;
+
+  --link: var(--indigo-3);
+  --link-visited: var(--purple-3);
+
+  --bg: hsl(45deg  6%  9%);
+  --fg: hsl(none none 85%);
+  --grad: linear-gradient(to top right, cyan, dodgerblue);
+
+  --text-1: var(--fg);
+  --text-2: hsl(from var(--fg) h s 75%);
+  --brand: oklch(from dodgerblue 80% c h);
+
+  --surface-1: var(--bg);
+  --surface-2: hsl(from var(--surface-1) h s 15%);
+  --surface-3: var(--gray-7);
+  --surface-4: var(--gray-6);
+
+  scrollbar-color: var(--scrollthumb-color) transparent;
+  accent-color: var(--brand, var(--link));
+  caret-color: var(--brand, var(--link));
+  color: var(--text-1);
+  background-color: var(--surface-1);
+  font-family: var(--font-system-ui);
 }
 
-body.container {
-  width: fit-content;
+:where(a[href]) {
+  color: var(--brand, var(--link));
+  
+  &:where(:visited) {
+    color: var(--link-visited);
+  }
+}
+
+:focus-visible { 
+  outline-color: var(--brand, var(--link)); 
 }

@@ -1,87 +1,117 @@
 ---
 import BaseLayout from '../layouts/Base.astro'
-import { Pin, AtSign, Linkedin } from '@lucide/astro'
-import Github from '../assets/github.svg'
-import Youtube from '../assets/youtube.svg'
-import Instagram from '../assets/instagram.svg'
+import { SquareActivity, FlaskConical } from '@lucide/astro'
+import MapPin from '../assets/icons/si-map-pin.svg'
+import Github from '../assets/icons/pro-github.svg'
+import Insta from '../assets/icons/sl-instagram.svg'
+import Linkedin from '../assets/icons/sl-linkedin.svg'
+import Email from '../assets/icons/sl-send-email.svg'
+import Youtube from '../assets/icons/sl-youtube.svg'
 ---
 
 <BaseLayout title="John Sherrell">
-	<header>
-		<img src="/me.jpg">
-		<h1>John Sherrell</h1>
-	</header>
-	<main>
-  	<ul>
-			<li><Github /><a href="https://github.com/ohnsh">@ohnsh</a></li>
-			<li><AtSign /><a href="mailto:j@ohn.sh">j@ohn.sh</a></li>
-			<li><Instagram /><a href="https://instagram.com/j.ohn.sh">@j.ohn.sh</a></li>
-			<li><Youtube /><a href="https://youtube.com/@ohn-sh">@ohn-sh</a></li>
-			<li><Linkedin /><a href="https://linkedin.com/in/ohnsh">@ohn-sh</a></li>
-			<!--<li><Facebook /><a href="https://facebook.com/ohn.sh0">@ohn.sh0</a></li>-->
-		</ul>
-	</main>
-	<footer>
-		<p><Pin /> Kansas City, Missouri</p>
-	</footer>
+  <header>
+    <img src="/me.jpg" />
+    <h1>John Sherrell</h1>
+  </header>
+  <main>
+    <ul class="projects">
+      <li>
+        <a href="https://days.ohn.sh"><SquareActivity stroke-width="1" /><span>days.ohn.sh</span></a
+        >
+      </li>
+      <li>
+        <a href="https://scratch.ohn.sh"
+          ><FlaskConical stroke-width="1" /><span>scratch.ohn.sh</span></a
+        >
+      </li>
+    </ul>
+    <ul class="socials">
+      <li><a href="https://github.com/ohnsh"><Github stroke-width="1" /><span>@ohnsh</span></a></li>
+      <li><a href="mailto:j@ohn.sh"><Email stroke-width=".6" /><span>j@ohn.sh</span></a></li>
+      <li>
+        <a href="https://instagram.com/j.ohn.sh"><Insta stroke-width="1" /><span>@j.ohn.sh</span></a
+        >
+      </li>
+      <li>
+        <a href="https://youtube.com/@ohn-sh"><Youtube stroke-width="1" /><span>@ohn-sh</span></a>
+      </li>
+      <li>
+        <a href="https://linkedin.com/in/ohnsh"
+          ><Linkedin stroke-width=".6" /><span>@ohn-sh</span></a
+        >
+      </li>
+      <!--https://facebook.com/ohn.sh0-->
+    </ul>
+  </main>
+  <footer>
+    <p><MapPin /> Kansas City, Missouri</p>
+  </footer>
 </BaseLayout>
 
 <style>
-	:root {
-		--grad: linear-gradient(to top right, cyan, dodgerblue);
-	}
-	header, footer {
-		text-align: center;
-	}
-	main {
-		/* un-pico */
-		padding-block: 0;
-	}
-	img {
-		width: 200px;
-		background: var(--grad);
-		border: solid 1.5px transparent;
-		border-radius: 50%;
-	}
-	ul {
-		width: fit-content;
-		margin-inline: auto;
-		border: solid 1.5px #444;
-		border-radius: 1em;
-		padding: 1em 2em;
-		background: var(--pico-background-color);
-	}
-	/* ul:hover {
+  h1 {
+    font-family: var(--font-transitional);
+  }
+  header,
+  footer {
+    text-align: center;
+  }
+  img {
+    width: 200px;
+    background: var(--grad);
+    border: solid 1.5px transparent;
+    border-radius: 50%;
+  }
+  ul {
+		list-style: none;
+    width: fit-content;
+    min-width: 230px;
+    margin: 1rem auto;
+    border: solid 1.5px #444;
+    border-radius: 1em;
+    padding: 0.5em;
+    font-size: 1.1rem;
+  }
+  /* ul:hover {
 		background-image: var(--grad);
 		background-clip: text;
 		-webkit-background-clip: text;
 		border: solid 1.5px transparent;
 		color: transparent;
 	} */
-	ul, li {
-		list-style: none;
-	}
-	ul li {
-		display: flex;
-		align-items: center;
-	}
-	ul a {
-		display: block;
-		padding: .5em 1em;
-		text-decoration: none;
-	}
-	:global(svg) {
-	  width: 1.1em;
-	  height: 1.1em;
-	  /* stroke: currentColor;
-	  stroke-linecap: round;
-	  stroke-linejoin: round;
-		stroke-width */
-	}
-	ul :global(svg) {
-		font-size: 1.75em;
-	}
-	footer {
-		font-size: small;
-	}
+  ul a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    padding: 0.5em 1em;
+    color: inherit;
+    text-decoration: none;
+  }
+  ul.projects a > span {
+    min-width: 11ch;
+  }
+  ul.socials a {
+    gap: 2em;
+    > span {
+      min-width: calc(11ch - 1em);
+      /* text-align: center; */
+    }
+  }
+  ul :global(svg) {
+    font-size: 1.75em;
+    width: 1.1em;
+    height: 1.1em;
+  }
+  footer {
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+    & svg {
+      width: 1.2em;
+      height: 1.2em;
+      vertical-align: bottom;
+      margin-right: 0.25em;
+    }
+  }
 </style>
