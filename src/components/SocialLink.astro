@@ -10,24 +10,32 @@ const { platform, handle } = Astro.props
 const { Icon, link, display, strokeFactor = 1 } = platforms[platform]
 ---
 
-<li><a href={link(handle)}><Icon stroke-width={strokeFactor} /><span>{display(handle)}</span></a></li>
+<li>
+  <a href={link(handle)}><Icon stroke-width={strokeFactor} /><span>{display(handle)}</span></a>
+</li>
 
 <style>
   a {
+    --base-gap: 1em;
+    --extra-gap: 1em;
+    --longest-handle: 11ch;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1em;
     padding: 0.5em 1em;
     color: inherit;
-    gap: 2em;
-    text-underline-offset: .1rem;
-    
+    gap: calc(var(--base-gap) + var(--extra-gap));
+    text-underline-offset: 0.1rem;
+
     &:not(:hover) {
       text-decoration: none;
     }
+    /* Subgrid would probably be the best way to maintain alignment across lists.
+     * For now, I'm setting the column width to a magic number based on the longest row.
+     */
     > span {
-      min-width: calc(11ch - 1em);
+      min-width: calc(var(--longest-handle) - var(--extra-gap));
     }
   }
 </style>

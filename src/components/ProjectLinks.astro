@@ -11,10 +11,13 @@ import { SquareActivity, FlaskConical } from '@lucide/astro'
 
 <style>
   a {
+    --base-gap: 1em;
+    --longest-handle: 11ch;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1em;
+    gap: var(--base-gap);
     padding: 0.5em 1em;
     color: inherit;
     text-underline-offset: .1rem;
@@ -22,8 +25,11 @@ import { SquareActivity, FlaskConical } from '@lucide/astro'
     &:not(:hover) {
       text-decoration: none;
     }
+    /* Subgrid would probably be the best way to maintain alignment across lists.
+     * For now, I'm setting the column width to a magic number based on the longest row.
+     */
     > span {
-      min-width: 11ch;
+      min-width: var(--longest-handle);
     }
   }
 </style>
