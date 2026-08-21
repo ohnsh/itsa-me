@@ -1,0 +1,2 @@
+- <https://certificates.emeritus.org/profile/jonathansherrell393242/wallet>
+- <https://certificates.emeritus.org/33d7b8b8-90f2-44b2-8963-59ef85142152#acc.abpfkZx9>
