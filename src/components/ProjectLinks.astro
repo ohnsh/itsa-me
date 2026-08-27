@@ -3,10 +3,10 @@ import { SquareActivity, FlaskConical } from '@lucide/astro'
 ---
 
 <li>
-  <a href="https://days.ohn.sh"><SquareActivity stroke-width="1" /><span>days.ohn.sh</span></a>
+  <a href="https://dash.ohn.sh"><i class="cursor-icon"></i><span>dash.ohn.sh</span></a>
 </li>
 <li>
-  <a href="https://scratch.ohn.sh"><FlaskConical stroke-width="1" /><span>scratch.ohn.sh</span></a>
+  <a href="https://days.ohn.sh"><SquareActivity stroke-width="1" /><span>days.ohn.sh</span></a>
 </li>
 
 <style>
@@ -21,7 +21,7 @@ import { SquareActivity, FlaskConical } from '@lucide/astro'
     padding: 0.5em 1em;
     color: inherit;
     text-underline-offset: .1rem;
-    
+
     &:not(:hover) {
       text-decoration: none;
     }
@@ -30,6 +30,47 @@ import { SquareActivity, FlaskConical } from '@lucide/astro'
      */
     > span {
       min-width: var(--longest-handle);
+    }
+  }
+
+  /* blinking cursor effect. */
+  /* another option is to put a big right-border on <code>, in which case the vertical
+     sizing and alignment would be automatic. */
+  .cursor-icon {
+    /* replicate svg dimensions */
+    font-size: 1.75em;
+    width: 1.1em;
+    height: 1.1em;
+
+    /* center the cursor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::after {
+      content: '';
+      /* required to be able to assign width and height */
+      display: inline-block;
+      width: .7ch;
+      height: 1.2ch;
+      background: var(--text-1);
+      border-radius: .05ch;
+
+      /* slower than the real thing to make it less distracting */
+      animation: blink .8s linear alternate infinite;
+    }
+  }
+
+  @keyframes blink {
+
+    from,
+    45% {
+      opacity: 0;
+    }
+
+    55%,
+    to {
+      opacity: .8;
     }
   }
 </style>
